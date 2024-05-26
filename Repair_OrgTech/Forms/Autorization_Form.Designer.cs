@@ -116,11 +116,11 @@
             this.lbl_LogIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_LogIn.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_LogIn.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_LogIn.Location = new System.Drawing.Point(161, 515);
+            this.lbl_LogIn.Location = new System.Drawing.Point(267, 515);
             this.lbl_LogIn.Name = "lbl_LogIn";
-            this.lbl_LogIn.Size = new System.Drawing.Size(377, 28);
+            this.lbl_LogIn.Size = new System.Drawing.Size(164, 28);
             this.lbl_LogIn.TabIndex = 7;
-            this.lbl_LogIn.Text = "Оставить заявку и зарегистрироваться";
+            this.lbl_LogIn.Text = "Оставить заявку";
             this.lbl_LogIn.Click += new System.EventHandler(this.lbl_LogIn_Click);
             // 
             // Autorization_Form

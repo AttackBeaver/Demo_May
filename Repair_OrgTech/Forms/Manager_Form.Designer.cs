@@ -127,6 +127,7 @@
             this.btn_Report.Text = "Отчет";
             this.btn_Report.UseMnemonic = false;
             this.btn_Report.UseVisualStyleBackColor = true;
+            this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
             // 
             // lbl_Count
             // 

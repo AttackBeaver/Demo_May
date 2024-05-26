@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Repair_OrgTech
 {
-    public partial class Autorization_Form : Formz
+    public partial class Autorization_Form : Form
     {
         public Autorization_Form()
         {
@@ -91,7 +91,8 @@ namespace Repair_OrgTech
 
         private void lbl_LogIn_Click(object sender, EventArgs e)
         {
-
+            AddRequest_Form addRequest_Form = new AddRequest_Form();
+            addRequest_Form.ShowDialog();
         }
     }
 }

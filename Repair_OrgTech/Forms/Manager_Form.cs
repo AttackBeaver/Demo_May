@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,8 +33,8 @@ namespace Repair_OrgTech.Forms
                 grid_Request.DataSource = db_Connect.from_DB("exec sp_FullRequest");
 
                 int count = 0;
-                DataTable dt_count = db_Connect.from_DB("exec sp_FullRequest");
-                for (int i = 0;  i < dt_count.Rows.Count; i++)
+                System.Data.DataTable dt_count = db_Connect.from_DB("exec sp_FullRequest");
+                for (int i = 0; i < dt_count.Rows.Count; i++)
                 {
                     count++;
                 }
@@ -56,6 +59,27 @@ namespace Repair_OrgTech.Forms
             AddRequest_Form addRequest_Form = new AddRequest_Form();
             addRequest_Form.ShowDialog();
             Grid_Load();
+        }
+
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
+            Workbook workbook;
+            Worksheet worksheet;
+
+            workbook = application.Workbooks.Add(System.Reflection.Missing.Value);
+            worksheet = (Worksheet)workbook.Worksheets.get_Item(1);
+
+            for (int i = 0; i < grid_Request.Rows.Count; i++)
+            {
+                for (int j = 0; j < grid_Request.ColumnCount; i++ )
+                {
+                    application.Cells[i + 1, j + 1] = grid_Request.Rows[i].Cells[j].Value;
+                }
+            }
+
+            application.Visible = true;
+            application.UserControl = true;
         }
     }
 }
