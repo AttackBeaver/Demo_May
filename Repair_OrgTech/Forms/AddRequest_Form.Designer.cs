@@ -48,6 +48,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.box_Client = new System.Windows.Forms.ComboBox();
             this.btn_AddRequest = new System.Windows.Forms.Button();
+            this.lbl_Back = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_Title
@@ -245,12 +246,26 @@
             this.btn_AddRequest.UseVisualStyleBackColor = true;
             this.btn_AddRequest.Click += new System.EventHandler(this.btn_AddRequest_Click);
             // 
+            // lbl_Back
+            // 
+            this.lbl_Back.AutoSize = true;
+            this.lbl_Back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_Back.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Back.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_Back.Location = new System.Drawing.Point(898, 9);
+            this.lbl_Back.Name = "lbl_Back";
+            this.lbl_Back.Size = new System.Drawing.Size(92, 28);
+            this.lbl_Back.TabIndex = 48;
+            this.lbl_Back.Text = "<--Назад";
+            this.lbl_Back.Click += new System.EventHandler(this.lbl_Back_Click);
+            // 
             // AddRequest_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1002, 664);
+            this.Controls.Add(this.lbl_Back);
             this.Controls.Add(this.btn_AddRequest);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.box_Client);
@@ -306,5 +321,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox box_Client;
         private System.Windows.Forms.Button btn_AddRequest;
+        private System.Windows.Forms.Label lbl_Back;
     }
 }

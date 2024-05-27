@@ -31,9 +31,9 @@
             this.lbl_Title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_AddRole = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.box_Role = new System.Windows.Forms.TextBox();
-            this.btn_AddRole = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.box_Surname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.box_Password = new System.Windows.Forms.TextBox();
             this.btn_AddUser = new System.Windows.Forms.Button();
+            this.lbl_Back = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +84,19 @@
             this.panel1.Size = new System.Drawing.Size(361, 640);
             this.panel1.TabIndex = 31;
             // 
+            // btn_AddRole
+            // 
+            this.btn_AddRole.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AddRole.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_AddRole.Location = new System.Drawing.Point(62, 344);
+            this.btn_AddRole.Name = "btn_AddRole";
+            this.btn_AddRole.Size = new System.Drawing.Size(235, 55);
+            this.btn_AddRole.TabIndex = 48;
+            this.btn_AddRole.Text = "Добавить роль";
+            this.btn_AddRole.UseMnemonic = false;
+            this.btn_AddRole.UseVisualStyleBackColor = true;
+            this.btn_AddRole.Click += new System.EventHandler(this.btn_AddRole_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -100,19 +114,6 @@
             this.box_Role.Name = "box_Role";
             this.box_Role.Size = new System.Drawing.Size(338, 41);
             this.box_Role.TabIndex = 37;
-            // 
-            // btn_AddRole
-            // 
-            this.btn_AddRole.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_AddRole.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_AddRole.Location = new System.Drawing.Point(62, 344);
-            this.btn_AddRole.Name = "btn_AddRole";
-            this.btn_AddRole.Size = new System.Drawing.Size(235, 55);
-            this.btn_AddRole.TabIndex = 48;
-            this.btn_AddRole.Text = "Добавить роль";
-            this.btn_AddRole.UseMnemonic = false;
-            this.btn_AddRole.UseVisualStyleBackColor = true;
-            this.btn_AddRole.Click += new System.EventHandler(this.btn_AddRole_Click);
             // 
             // label2
             // 
@@ -255,12 +256,26 @@
             this.btn_AddUser.UseVisualStyleBackColor = true;
             this.btn_AddUser.Click += new System.EventHandler(this.btn_AddUser_Click);
             // 
+            // lbl_Back
+            // 
+            this.lbl_Back.AutoSize = true;
+            this.lbl_Back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_Back.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Back.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_Back.Location = new System.Drawing.Point(898, 9);
+            this.lbl_Back.Name = "lbl_Back";
+            this.lbl_Back.Size = new System.Drawing.Size(92, 28);
+            this.lbl_Back.TabIndex = 51;
+            this.lbl_Back.Text = "<--Назад";
+            this.lbl_Back.Click += new System.EventHandler(this.lbl_Back_Click);
+            // 
             // AddRoleUser_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1002, 664);
+            this.Controls.Add(this.lbl_Back);
             this.Controls.Add(this.btn_AddUser);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.box_Password);
@@ -317,5 +332,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox box_Password;
         private System.Windows.Forms.Button btn_AddUser;
+        private System.Windows.Forms.Label lbl_Back;
     }
 }

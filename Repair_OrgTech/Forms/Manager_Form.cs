@@ -21,19 +21,18 @@ namespace Repair_OrgTech.Forms
 
         private void Grid_Load()
         {
+            int count = 0;
             try
             {
-                grid_Request.DataSource = db_Connect.from_DB("exec sp_FullRequest");
-
-                int count = 0;
                 System.Data.DataTable dt_count = db_Connect.from_DB("exec sp_FullRequest");
+                grid_Request.DataSource = dt_count;
+                grid_User.DataSource = db_Connect.from_DB("exec sp_Users");
+
                 for (int i = 0; i < dt_count.Rows.Count; i++)
                 {
                     count++;
                 }
                 lbl_Count.Text = $"Заявок: {count}";
-
-                grid_User.DataSource = db_Connect.from_DB("exec sp_Users");
             }
             catch (Exception ex)
             {
@@ -59,11 +58,8 @@ namespace Repair_OrgTech.Forms
         private void btn_Report_Click(object sender, EventArgs e)
         {
             Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
-            Workbook workbook;
-            Worksheet worksheet;
-
-            workbook = application.Workbooks.Add(System.Reflection.Missing.Value);
-            worksheet = (Worksheet)workbook.Worksheets.get_Item(1);
+            Workbook workbook = application.Workbooks.Add(System.Reflection.Missing.Value);
+            Worksheet worksheet = (Worksheet)workbook.Worksheets.get_Item(1);
 
             for (int i = 0; i < grid_Request.Rows.Count; i++)
             {
@@ -72,7 +68,7 @@ namespace Repair_OrgTech.Forms
                     application.Cells[i + 1, j + 1] = grid_Request.Rows[i].Cells[j].Value;
                 }
             }
-
+            
             application.Visible = true;
             application.UserControl = true;
         }

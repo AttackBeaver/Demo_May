@@ -35,7 +35,7 @@ namespace Repair_OrgTech
                     string login = dataTable.Rows[i][6].ToString();
                     string password = dataTable.Rows[i][7].ToString();
 
-                    Debug.WriteLine($"Проверка пользователя: {login}");
+                    Debug.WriteLine($"Проверка логин: {login} и пароль: {password}");
 
                     if (box_Login.Text == login && box_Password.Text == password)
                     {
