@@ -1,13 +1,9 @@
-﻿using Repair_OrgTech.Forms;
+﻿using QRCoder;
+using Repair_OrgTech.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Repair_OrgTech
@@ -44,7 +40,7 @@ namespace Repair_OrgTech
                     if (box_Login.Text == login && box_Password.Text == password)
                     {
                         int role = Convert.ToInt32(dataTable.Rows[i][1]);
-                        Debug.WriteLine($"Успешная авторизация для пользователя: {login}, роль: {role}");
+                        Debug.WriteLine($"Успешная авторизация для пользователя: {login}, пароль: {password}");
 
                         switch (role)
                         {
@@ -74,6 +70,7 @@ namespace Repair_OrgTech
                                 break;
                             default:
                                 Debug.WriteLine($"Неизвестная роль: {role} для пользователя: {login}");
+                                result = false;
                                 break;
                         }
                         if (result == false)
@@ -89,10 +86,30 @@ namespace Repair_OrgTech
             }
         }
 
-        private void lbl_LogIn_Click(object sender, EventArgs e)
+        public void lbl_LogIn_Click(object sender, EventArgs e)
         {
             AddRequest_Form addRequest_Form = new AddRequest_Form();
             addRequest_Form.ShowDialog();
+        }
+
+        private void GenerateQRCode(string url)
+        {
+            using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
+            {
+                using (QRCodeData qrCodeData = qrGenerator.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q))
+                {
+                    using (QRCode qrCode = new QRCode(qrCodeData))
+                    {
+                        Bitmap qrCodeImage = qrCode.GetGraphic(20);
+                        box_QR.Image = qrCodeImage;
+                    }
+                }
+            }
+        }
+
+        private void Autorization_Form_Load(object sender, EventArgs e)
+        {
+            GenerateQRCode("https://docs.google.com/forms/d/e/1FAIpQLSdhZcExx6LSIXxk0ub55mSu-WIh23WYdGG9HY5EZhLDo7P8eA/viewform");
         }
     }
 }

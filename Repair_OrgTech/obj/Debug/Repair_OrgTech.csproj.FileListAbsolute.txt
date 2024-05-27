@@ -35,3 +35,4 @@ D:\Education\Демо\Demo_May\Repair_OrgTech\obj\Debug\Repair_OrgTech.csproj.Re
 D:\Education\Демо\Demo_May\Repair_OrgTech\bin\Debug\BouncyCastle.Crypto.dll
 D:\Education\Демо\Demo_May\Repair_OrgTech\bin\Debug\itextsharp.dll
 D:\Education\Демо\Demo_May\Repair_OrgTech\bin\Debug\itextsharp.xml
+D:\Education\Демо\Demo_May\Repair_OrgTech\bin\Debug\QRCoder.dll

@@ -1,6 +1,0 @@
-D:\Education\Демо\Demo_May\LoginFormTests\obj\Debug\net8.0\LoginFormTests.csproj.AssemblyReference.cache
-D:\Education\Демо\Demo_May\LoginFormTests\obj\Debug\net8.0\LoginFormTests.csproj.ResolveComReference.cache
-D:\Education\Демо\Demo_May\LoginFormTests\obj\Debug\net8.0\LoginFormTests.GeneratedMSBuildEditorConfig.editorconfig
-D:\Education\Демо\Demo_May\LoginFormTests\obj\Debug\net8.0\LoginFormTests.AssemblyInfoInputs.cache
-D:\Education\Демо\Demo_May\LoginFormTests\obj\Debug\net8.0\LoginFormTests.AssemblyInfo.cs
-D:\Education\Демо\Demo_May\LoginFormTests\obj\Debug\net8.0\LoginFormTests.csproj.CoreCompileInputs.cache

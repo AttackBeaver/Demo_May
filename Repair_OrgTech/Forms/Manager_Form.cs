@@ -1,15 +1,7 @@
 ﻿using Microsoft.Office.Interop.Excel;
-using OfficeOpenXml;
+using QRCoder;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Repair_OrgTech.Forms
@@ -24,6 +16,7 @@ namespace Repair_OrgTech.Forms
         private void Manager_Form_Load(object sender, EventArgs e)
         {
             Grid_Load();
+            GenerateQRCode("https://docs.google.com/forms/d/e/1FAIpQLSdhZcExx6LSIXxk0ub55mSu-WIh23WYdGG9HY5EZhLDo7P8eA/viewform");
         }
 
         private void Grid_Load()
@@ -80,6 +73,21 @@ namespace Repair_OrgTech.Forms
 
             application.Visible = true;
             application.UserControl = true;
+        }
+
+        private void GenerateQRCode(string url)
+        {
+            using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
+            {
+                using (QRCodeData qrCodeData = qrGenerator.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q))
+                {
+                    using (QRCode qrCode = new QRCode(qrCodeData))
+                    {
+                        Bitmap qrCodeImage = qrCode.GetGraphic(20);
+                        box_QR.Image = qrCodeImage;
+                    }
+                }
+            }
         }
     }
 }

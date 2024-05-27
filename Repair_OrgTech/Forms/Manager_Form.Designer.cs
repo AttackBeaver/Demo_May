@@ -36,7 +36,9 @@
             this.btn_AddRoleUser = new System.Windows.Forms.Button();
             this.btn_Report = new System.Windows.Forms.Button();
             this.lbl_Count = new System.Windows.Forms.Label();
+            this.box_QR = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Request)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box_QR)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Title
@@ -139,12 +141,22 @@
             this.lbl_Count.TabIndex = 12;
             this.lbl_Count.Text = "Заявок:";
             // 
+            // box_QR
+            // 
+            this.box_QR.Location = new System.Drawing.Point(32, 377);
+            this.box_QR.Name = "box_QR";
+            this.box_QR.Size = new System.Drawing.Size(200, 200);
+            this.box_QR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.box_QR.TabIndex = 13;
+            this.box_QR.TabStop = false;
+            // 
             // Manager_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1218, 684);
+            this.Controls.Add(this.box_QR);
             this.Controls.Add(this.lbl_Count);
             this.Controls.Add(this.btn_Feedback);
             this.Controls.Add(this.btn_Report);
@@ -161,6 +173,7 @@
             this.Text = "Ремонт оргтехники";
             this.Load += new System.EventHandler(this.Manager_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_Request)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box_QR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +189,6 @@
         private System.Windows.Forms.Button btn_AddRoleUser;
         private System.Windows.Forms.Button btn_Report;
         private System.Windows.Forms.Label lbl_Count;
+        private System.Windows.Forms.PictureBox box_QR;
     }
 }
