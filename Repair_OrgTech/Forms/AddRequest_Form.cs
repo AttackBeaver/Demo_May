@@ -72,12 +72,13 @@ namespace Repair_OrgTech.Forms
         {
             try
             {
-                if (box_Type.Text == " " || box_StartDate.Text == " " || box_Model.Text == " " || box_Problem.Text == " " || box_Status.Text == " "
-                    || box_CompDate.Text == " " || box_Parts.Text == " " || box_Master.Text == " " || box_Client.Text == " ")
+                if (box_Type.Text != " " || box_StartDate.Text != " " || box_Model.Text != " " || box_Problem.Text != " " || box_Status.Text != " "
+                    || box_CompDate.Text != " " || box_Parts.Text != " " || box_Master.Text != " " || box_Client.Text != " ")
                 {
                     db_Connect.to_DB($"exec sp_AddRequest '{box_Type.SelectedIndex + 1}','{box_StartDate.Text}','{box_Model.Text}','{box_Problem.Text}'," +
                         $"'{box_Status.SelectedIndex + 1}','{box_CompDate.Text}','{box_Parts.Text}','{box_Master.SelectedIndex + 1}','{box_Client.SelectedIndex + 1}'");
                     MessageBox.Show("Заявка успешно добавлена", "Заявка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
                 }
                 else
                 {

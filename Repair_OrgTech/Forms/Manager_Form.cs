@@ -32,6 +32,8 @@ namespace Repair_OrgTech.Forms
                     count++;
                 }
                 lbl_Count.Text = $"Заявок: {count}";
+
+                grid_User.DataSource = db_Connect.from_DB("exec sp_Users");
             }
             catch (Exception ex)
             {
@@ -65,7 +67,7 @@ namespace Repair_OrgTech.Forms
 
             for (int i = 0; i < grid_Request.Rows.Count; i++)
             {
-                for (int j = 0; j < grid_Request.ColumnCount; i++ )
+                for (int j = 0; j < grid_Request.ColumnCount; j++ )
                 {
                     application.Cells[i + 1, j + 1] = grid_Request.Rows[i].Cells[j].Value;
                 }
@@ -88,6 +90,13 @@ namespace Repair_OrgTech.Forms
                     }
                 }
             }
+        }
+
+        private void btn_AddRoleUser_Click(object sender, EventArgs e)
+        {
+            AddRoleUser_Form addRoleUser_Form = new AddRoleUser_Form();
+            addRoleUser_Form.ShowDialog();
+            Grid_Load();
         }
     }
 }

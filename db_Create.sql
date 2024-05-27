@@ -1,3 +1,4 @@
+
 create table Roles(
 Role_ID int identity(1,1) primary key,
 Role_Title nvarchar(100))
@@ -70,5 +71,30 @@ end
 
 exec sp_AddRequest '','','','','','','','',''
 
+create proc sp_Users
+as
+select Roles.Role_Title as [Роль в системе],Users.User_Surname+' '+Users.User_Name+' '+Users.User_Lastname as [ФИО],Users.User_Phone as [Телефон],
+Users.User_Login as [Логин],Users.User_Password as [Пароль]
+from Users inner join Roles on Users.Role_ID = Roles.Role_ID
 
+exec sp_Users
 
+create proc sp_AddRoles
+@title nvarchar(max)
+as
+begin
+	insert into Roles(Role_Title)
+	values(@title)
+end
+
+exec sp_AddRoles ''
+
+create proc sp_AddUsers
+@role int,@surname nvarchar(max),@name nvarchar(max),@lastname nvarchar(max),@phone nvarchar(max),@login nvarchar(max),@pass nvarchar(max)
+as
+begin
+	insert into Users(Role_ID,User_Surname,User_Name,User_Lastname,User_Phone,User_Login,User_Password)
+	values(@role,@surname,@name,@lastname,@phone,@login,@pass)
+end
+
+exec sp_AddUsers '','','','','','',''

@@ -15,7 +15,7 @@ namespace Repair_OrgTech.Tests
             var expectedPassword = "pass1";
 
             // Act
-            authorizationForm.box_Login.Text = "login1";
+            authorizationForm.box_Login.Text = "login2";
             authorizationForm.box_Password.Text = "pass1";
             authorizationForm.btn_SignIn_Click(null, null);
 

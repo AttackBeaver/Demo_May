@@ -73,11 +73,11 @@ namespace Repair_OrgTech
                                 result = false;
                                 break;
                         }
-                        if (result == false)
-                        {
-                            MessageBox.Show($"Неверные данные для входа", "Вход в систему", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
                     }
+                }
+                if (result == false)
+                {
+                    MessageBox.Show($"Неверные данные для входа", "Вход в систему", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

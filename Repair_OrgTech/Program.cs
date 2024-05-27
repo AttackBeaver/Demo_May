@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repair_OrgTech.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Repair_OrgTech
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Autorization_Form());
+            Application.Run(new Manager_Form());
         }
     }
 }
